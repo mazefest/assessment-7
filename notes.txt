@@ -1,0 +1,20 @@
+
+Results for the extraLargeArray
+insert 863.886966 ms
+append 3.849495 ms
+
+Size             Insert          Append
+----------------|------------------------------------
+tinyArray       |        [56.173 μs]     95.193 μs
+smallArray      |         98.381 μs     [15.834 μs]
+mediumArray     |         160.715 μs    [102.091 μs]
+largeArray      |         8.761513 ms   [662.93 μs]
+XLrgArray       |         969.441708 ms [6.061716 ms]
+----------------|------------------------------------
+
+It seems the larger the array the more efficient the doublerAppend function is over
+the tinyArray. This makes since becuse the doubleInsert function does have extra processes 
+when adding an item to the array as it shifts all the elements. So `doublerAppend` definitely
+scales better. But the outcomes of both functions ar different, as if you want to get the same result 
+of the doublerInsert function using the doublerAppend function you wil have to run it, and then `reverse`.
+Even so, that seems to be a faster route than using `unshift`.
